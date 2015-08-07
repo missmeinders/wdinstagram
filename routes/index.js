@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var indexController = require('../controllers/index');
+var entriesController = require('../controllers/entries');
 
-/* GET '/' - render index view */
-router.get('/', indexController.renderIndexView);
+/* GET '/' - render entries index view */
+router.get('/', entriesController.renderEntriesIndex);
 
 module.exports = router;
