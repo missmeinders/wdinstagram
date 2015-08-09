@@ -25,3 +25,12 @@ module.exports.renderEntriesShow = function(req, res, next) {
   });
 };
 
+module.exports.renderEntriesNew = function(req, res, next) {
+  res.render(
+    'entries/new',
+    {
+      title: 'WDInstagram',
+      show:  true
+    }
+  );
+};
