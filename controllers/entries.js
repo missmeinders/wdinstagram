@@ -37,10 +37,27 @@ module.exports.renderEntriesNew = function(req, res, next) {
 
 module.exports.renderEntriesCreate = function(req, res, next) {
   Entry.create(req.body.entry, function (err, entry) {
-    if (err) {
-      res.send('Something wrong happened: '+ err);
-    } else {
-      res.redirect('/entries/' + entry.id);
-    }
+    if (err) res.send('> '+ err);
+
+    res.redirect('/entries/' + entry.id);
+  });
+};
+
+module.exports.renderEntriesLike = function(req, res, next) {
+  Entry.findById(
+    req.params.id,
+    function (err, entry) {
+      if (err) res.send('> '+ err);
+
+      entry.likes++;
+      entry.save(function(err) {
+        if (err) console.log(err);
+      });
+
+      if (req.query.redirect === 'index') {
+        res.redirect('/entries');
+      } else {
+        res.redirect('/entries/' + entry.id);
+      }
   });
 };

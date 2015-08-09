@@ -8,5 +8,6 @@ router.get('/entries', entriesController.renderEntriesIndex);
 router.get('/entries/new', entriesController.renderEntriesNew);
 router.get('/entries/:id', entriesController.renderEntriesShow);
 router.post('/entries', entriesController.renderEntriesCreate);
+router.get('/entries/:id/like', entriesController.renderEntriesLike);
 
 module.exports = router;
