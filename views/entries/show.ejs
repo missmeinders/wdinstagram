@@ -15,7 +15,12 @@
       <hr class="before"/>
       <img alt="Entry Image" src="<%= entry.photo_url %>" />
       <hr class="after"/>
-      <span class="likes-text"><i class="fa fa-heart"></i> 0 likes</span>
+      <span class="likes-text">
+        <a href="/entries/<%= entry.id %>/like?redirect=show">
+          <i class="fa fa-heart"></i>
+          <%= entry.likes %> likes
+        </a>
+      </span>
     </div>
   </div>
 </body>

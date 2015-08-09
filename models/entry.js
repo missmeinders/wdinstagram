@@ -12,7 +12,11 @@ var entrySchema = new mongoose.Schema({
     default: Date.now,
     get:     formatDate
   },
-  photo_url:  String
+  photo_url:  String,
+  likes:      {
+    type:    Number,
+    default: 0
+  }
 });
 
 module.exports = mongoose.model('Entry', entrySchema);
