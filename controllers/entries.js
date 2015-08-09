@@ -34,3 +34,13 @@ module.exports.renderEntriesNew = function(req, res, next) {
     }
   );
 };
+
+module.exports.renderEntriesCreate = function(req, res, next) {
+  Entry.create(req.body.entry, function (err, entry) {
+    if (err) {
+      res.send('Something wrong happened: '+ err);
+    } else {
+      res.redirect('/entries/' + entry.id);
+    }
+  });
+};
