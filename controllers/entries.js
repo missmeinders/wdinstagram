@@ -1,3 +1,5 @@
+var moment = require('moment');
+
 // Controller for Entries
 
 // GET '/' - renders entries index page
