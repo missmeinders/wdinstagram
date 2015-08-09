@@ -19,4 +19,9 @@ var entrySchema = new mongoose.Schema({
   }
 });
 
+entrySchema.methods.html_formatted_likes = function() {
+  return '<i class="fa fa-heart"></i> ' + this.likes +
+         (this.likes === 1 ? ' like' : ' likes');
+};
+
 module.exports = mongoose.model('Entry', entrySchema);

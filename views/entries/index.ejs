@@ -20,8 +20,7 @@
         <hr class="after"/>
         <span class="likes-text">
           <a href="/entries/<%= entry.id %>/like?redirect=index">
-            <i class="fa fa-heart"></i>
-            <%= entry.likes %> likes
+            <%- entry.html_formatted_likes() %>
           </a>
         </span>
       </div>
